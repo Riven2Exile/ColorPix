@@ -110,7 +110,7 @@ void CColorPixDlg::OnTimer(UINT_PTR nIDEvent)
 		GetDlgItem(IDC_STATIC, &ctrl);
 
 		CString str;
-		str.Format("按“A”键确定选中颜色  R:%d G:%d B:%d ", red, green, blue);
+		str.Format(_T("按“A”键确定选中颜色  R:%d G:%d B:%d "), red, green, blue);
 		SetDlgItemText(IDC_STATIC, str);
 	}
 
@@ -151,7 +151,7 @@ BOOL CColorPixDlg::PreTranslateMessage(MSG* pMsg)
 			int blue = GetBValue(color);
 
 			CString str;
-			str.Format("#%06x", color);
+			str.Format(_T("#%02x%02x%02x"), red, green, blue);
 			SetDlgItemText(IDC_EDIT_COLOR, str);
 			SetDlgItemInt(IDC_EDIT_R, red);
 			SetDlgItemInt(IDC_EDIT_G, green);
